@@ -6,11 +6,12 @@ const dotenv = require('dotenv')
 const bcrypt = require('bcrypt')
 const saltRounds=10
 const fetch = require('node-fetch');
+const bodyParser = require('body-parser')
+
 
 var generate_token = require('./jwt/generate_token.js')
 var validate_token = require('./jwt/validate_token.js')
 
-const bodyParser = require('body-parser')
 var validate_email = require('./validate/validate_email.js')
 var validate_password = require('./validate/validate_password.js')
 
@@ -135,4 +136,3 @@ app.get('/get/senator_trades/:id',(req,res)=>{
     })
 })
 
-app.get
