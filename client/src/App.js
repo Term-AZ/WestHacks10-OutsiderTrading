@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import SenatorCard from './components/senatorCard/SenatorCard';
+import LandingPage from './pages/landingPage/LandingPage';
+import LoginPage from './pages/loginPage/LoginPage';
+import RegisterPage from './pages/registerPage/RegisterPage';
+import SenatorPage from './pages/senatorPage/SenatorPage';
+import PortfolioPage from './pages/portfolioPage/PortfolioPage';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Header/>
+      <Routes>
+        <Route path='/' element={<LandingPage/>}/>
+        <Route path='/user/login' element={<LoginPage/>}/>
+        <Route path='/user/register' element={<RegisterPage/>}/>
+        <Route path = '/sentator/:id' element={<SenatorPage/>}/>
+        <Route path='/portfolio' element={<PortfolioPage/>}/>
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
   );
 }
 
