@@ -7,7 +7,7 @@ import { Chart } from "react-google-charts";
 const PortfolioPage = () => {
   const [graph_data,set_graph_data] = useState()
   const [investment, set_investment] = useState()
-  const [following, set_following] = useState({})
+  const [following, set_following] = useState([])
   useEffect(()=>{
     fetch("http://localhost:8000/user/portfolio/history",{
         method:"GET",

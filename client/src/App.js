@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -11,6 +10,8 @@ import LoginPage from './pages/loginPage/LoginPage';
 import RegisterPage from './pages/registerPage/RegisterPage';
 import SenatorPage from './pages/senatorPage/SenatorPage';
 import PortfolioPage from './pages/portfolioPage/PortfolioPage';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path='/user/register' element={<RegisterPage/>}/>
         <Route path='/senators' element={<SenatorPage/>}/>
         {/* <Route path = '/sentator/:id' element={<SenatorPage/>}/> */}
-        {/* <Route path='/portfolio' element={<PortfolioPage/>}/> */}
+        <Route path='/portfolio' element={<PortfolioPage/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
