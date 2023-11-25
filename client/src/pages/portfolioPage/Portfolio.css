@@ -1,0 +1,51 @@
+h1{
+    padding-left: 20px;;
+}
+ul{
+}
+
+
+h1.portfolio_main_header{
+    padding-left: 0px;
+}
+.portfolio_background{
+    height:100%;
+    width:100%;
+    background-color: white;
+}
+
+.main_portfolio_container{
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction:column;
+}
+.portfolio_header_container{
+    height:10%;
+    color: rgb(102, 201, 141);
+}
+.portfolio_data_container{
+    height:90%;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+}
+.portfolio_left{
+    height:100%;
+    width:70%;
+}
+.portfolio_right{
+    padding-top: 50px;
+    padding-left:20px;
+    height:100%;
+    width:30%;
+    display:flex;
+    flex-direction: column;
+}
+
+.portfolio_data_container{
+    height:100%;
+    width:90%;
+    padding-left: 25px;
+}
+

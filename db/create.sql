@@ -5,6 +5,7 @@ CREATE TABLE users(
     email varchar(64) NOT NULL,
     user_password varchar(128) NOT NULL,
     wallet_code varchar(256) NOT NULL,
+    net_deposited float(10,2) NOT NULL DEFAULT 0.00,
     PRIMARY KEY(id)
 );
 
@@ -49,4 +50,20 @@ CREATE TABLE senator_trades(
     PRIMARY KEY(id),
     FOREIGN KEY(senator_id) REFERENCES senators(id) ON DELETE CASCADE,
 	FOREIGN KEY(company_id) REFERENCES company(company_name) ON DELETE CASCADE
+);
+CREATE TABLE investment_history(
+	id INT auto_increment NOT NULL,
+    user_id INT NOT NULL,
+    investment_worth float(10,2) NOT NULL,
+    history_date Date NOT NULL
+    PRIMARY KEY(id),
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);
+
+CREATE TABLE user_followers(
+	user_id INT NOT NULL,
+    senator_id varchar(16) NOT NULL,
+    PRIMARY KEY(user_id, senator_id),
+    FOREIGN KEY(user_id) REFERENCES users(id),
+    FOREIGN KEY(senator_id) REFERENCES senators(id)
 );

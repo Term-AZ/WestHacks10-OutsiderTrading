@@ -170,7 +170,7 @@ app.get('/user/submit_payment/:amount',(req,res)=>{
 
 
 
-            console.log(wallet_code)
+            return res.status(200).send({"msg": "Transaction Initiated"})
         }else{
             return res.status(500).send({"msg":"Id not found"})
         }
@@ -214,6 +214,35 @@ app.get('/user/get_wallet',(req,res)=>{
         }else{
             return res.status(500).send({"msg":"Id not found"})
         }
+    })
+})
+
+app.get('/user/portfolio/history',(req,res)=>{
+    
+    const id = req.cookies["Cookie Token"]
+
+    var q ="SELECT investment_worth, history_date FROM investment_history WHERE user_id = ?"
+    db.query(q,[6], (err,result)=>{
+        if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
+        return res.json(result)
+    })
+})
+
+app.get('/user/portfolio/netinvestment',(req,res)=>{
+    const id = req.cookies["Cookie Token"]
+    var q ="SELECT net_deposited FROM users WHERE id = ?"
+    db.query(q,[6], (err,result)=>{
+        if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
+        return res.json(result)
+    })
+})
+
+app.get('/user/portfolio/following',(req,res)=>{
+    const id = req.cookies["Cookie Token"]
+    var q="SELECT user_followers.senator_id, first_name, last_name FROM user_followers INNER JOIN senators ON senators.id = user_followers.senator_id WHERE user_id= ?"
+    db.query(q,[6],(err,result)=>{
+        if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
+        return res.json(result)
     })
 })
 

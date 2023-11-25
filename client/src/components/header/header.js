@@ -1,11 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Header.css'
+import logo from '../../images/outsider-trading-logo.png'
 
 const header = () => {
   return(
     <div className='nav_background'>
         <div className='nav_container'>
+            <div className = 'nav_image_container'>
+               <img className='nav_logo_image' src={logo}/> 
+            </div>
             <ul className='navbar_list'>
                 <li className='navbar_list_items'>
                     <NavLink className="nav_link" to="/" style={{ textDecoration: 'none' }}>Home</NavLink>

@@ -8,6 +8,18 @@
 .nav_container{
     height:100%;
     width:100%;
+    display: flex;
+    flex-direction: row;
+}
+.nav_image_container{
+    width:10%;
+    height:100%;
+
+}
+img.nav_logo_image{
+    width:100%;
+    height:100%;
+    object-fit: contain;
 }
 
 ul.navbar_list{
@@ -15,6 +27,7 @@ ul.navbar_list{
     display: flex;
     justify-content: flex-end;
     margin: 0;
+    width:90%;
 }
 
 li.navbar_list_items{
