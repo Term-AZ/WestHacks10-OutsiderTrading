@@ -20,9 +20,9 @@ const header = () => {
                 <li className='navbar_list_items'>
                     <NavLink className="nav_link" to="/portfolio" style={{ textDecoration: 'none' }}>Portfolio</NavLink>
                 </li>
-                <li className='navbar_list_items'>
+                {/* <li className='navbar_list_items'>
                     <NavLink className="nav_link" to="/user/login" style={{ textDecoration: 'none' }}>Login</NavLink>
-                </li>
+                </li> */}
             </ul>
         </div>
     </div>
