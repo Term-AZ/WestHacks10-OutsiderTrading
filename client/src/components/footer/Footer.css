@@ -1,0 +1,9 @@
+.footer_background{
+    width:100vw;
+    height: 3vh;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

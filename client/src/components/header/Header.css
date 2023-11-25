@@ -1,0 +1,33 @@
+.nav_background{
+    width:99vw;
+    height:5vh;
+    /* background-image: linear-gradient(to right, rgb(71, 34, 34), rgb(97, 25, 25) ); */
+    background-color: rgb(102, 201, 141);
+    margin:0px
+}
+.nav_container{
+    height:100%;
+    width:100%;
+}
+
+ul.navbar_list{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+li.navbar_list_items{
+    padding-top: 5px;
+    color: white;
+    font-size: 1.3em; 
+    padding-right: 1vw;
+    height:80%;
+    width: fit-content;
+    text-align: center;
+}
+
+
+.nav_link{
+    color: #000000 !important;
+}
