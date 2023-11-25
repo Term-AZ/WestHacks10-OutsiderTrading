@@ -14,12 +14,13 @@
 }
 
 .image-section{
-    align-self: center;
+    margin-top: 2%;
 }
 
-h1{
+.big-text{
     font-size: 2.6em;
     margin: 0%;
+    padding: 0%;
     
 }
 
@@ -55,4 +56,8 @@ h3{
     display: inline-block;
     font-size: 16px;
     border-radius: 12px;
+}
+
+.butt:hover{
+    background-color: #332f2f;
 }
