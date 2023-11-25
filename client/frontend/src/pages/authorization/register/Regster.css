@@ -1,0 +1,63 @@
+.Background{
+    background: linear-gradient(178deg, #20172C 0%, #131735 100%);
+    height:100vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.SignUpContainer{
+    border-radius: 30px;
+    background: #190A25;
+    width: 27vw;
+    height: 22vw;
+    margin-top: 1%;
+    margin-bottom: 0px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+p.TitleTextSignUp{
+    padding-top: 5%;
+    text-align: center;
+    font-size: 2vw;
+    color: white;
+    margin: 0px;
+}
+.EntryContainer{
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    width:90%;
+}
+p.EntryText{
+    margin-top:3%;
+    margin-bottom:2%;
+    font-size: 1.2vw;
+    color: white;
+    width:50%;
+    
+}
+input.UserInputSignUp{
+    width: 95%;
+    height: 5%;
+    flex-shrink: 0;
+    border: 1px solid #FFF;
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    margin:0; 
+}
+button.SignUpButton{
+    border-radius: 30px;
+    background: #FFF;
+    width: 30%;
+    height: 10%;
+    min-width: 50px;
+    font-size: 1vw;
+    margin-top: 5%;
+    text-align: center; 
+    align-self: center;
+}
