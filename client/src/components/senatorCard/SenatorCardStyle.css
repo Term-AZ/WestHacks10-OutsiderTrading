@@ -1,0 +1,47 @@
+.Card{
+    margin-top: 8rem;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border-radius: 30px;
+    max-width: 300px;
+    width: 100%;
+    padding: 15px;
+    
+    
+    .image-container img{
+        
+        border-radius: 30px;
+        object-fit: contain;
+
+    }
+
+    .senator-info{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+
+    
+}
+
+.democrat{
+    background-color: #6961FF;
+    box-shadow: 0 10px 20px rgba(173, 216, 230, 0.5);
+}
+
+.republican{
+    background-color: #FF6961;
+    box-shadow: 0 10px 20px rgba(255, 99, 71, 0.5);
+}
+
+.link{
+    text-decoration: none;
+    color: inherit;
+}

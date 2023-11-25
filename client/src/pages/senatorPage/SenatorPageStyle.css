@@ -1,0 +1,11 @@
+
+.page-container{
+    padding: 5rem;
+    background-color: #66C98D;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    row-gap: 5rem;
+}
