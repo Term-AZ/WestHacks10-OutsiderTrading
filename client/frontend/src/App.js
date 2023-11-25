@@ -1,25 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './reusables/Header/Header';
+import Footer from './reusables/Footer/Footer';
+import Landing from './pages/landing/Landing';
+import Mainpage from './pages/main/Mainpage';
+import Senatorpage from './pages/senatorpage/Senatorpage';
+import Userpage from './pages/userpage/Userpage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Header/>
+      <Routes>
+        <Route  path="/" element={<Dashboard/>}>
+          <Route name="default" path="/landing" element={<Landing/>}/>
+          <Route path='/main' element={<Mainpage/>}/>
+          <Route path='/userpage/:username' element={<Userpage/>}/>
+          <Route path='/senators/:id/:name' element={<Senatorpage/>}/>
+        </Route>
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
   );
 }
 
+
+function Dashboard(){
+  return(
+    <div>
+      <Outlet/>
+    </div>
+  )
+}
 export default App;
