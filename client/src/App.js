@@ -17,8 +17,6 @@ function App() {
     <Header/>
       <Routes>
         <Route path='/' element={<LandingPage/>}/>
-        <Route path='/user/login' element={<LoginPage/>}/>
-        <Route path='/user/register' element={<RegisterPage/>}/>
         <Route path='/senators' element={<SenatorPage/>}/>
         <Route path='/senator/:id' element={<Senatordatapage/>}/>
         <Route path='/portfolio' element={<PortfolioPage/>}/>
