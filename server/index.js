@@ -281,6 +281,14 @@ app.get('/user/follow_senator/:id',(req,res)=>{
     })
 })
 
+app.get('/get/origional/investment',(req,res)=>{
+    var q = "SELECT net_deposited FROM users where id=?"
+    db.query(q,[6],(err,result)=>{
+        if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
+        return res.json(result[0])
+    })
+})
+
 app.get('/user/get_update/:id',(req,res)=>{
     const id = req.params.id
     var q = "INSERT INTO senator_trades(senator_id, company_id, trade_date, trade_type, amount) VALUES(?,?,?,?,?)"

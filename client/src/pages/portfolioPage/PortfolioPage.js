@@ -8,6 +8,7 @@ const PortfolioPage = () => {
   const [graph_data,set_graph_data] = useState()
   const [investment, set_investment] = useState()
   const [following, set_following] = useState([])
+  const [origional_investment, set_origional_investment] = useState({})
   useEffect(()=>{
     fetch("http://localhost:8000/user/portfolio/history",{
         method:"GET",
@@ -52,6 +53,18 @@ const PortfolioPage = () => {
     set_following(data)
   }).catch(err=>console.log(err))
 
+  fetch("http://localhost:8000/get/origional/investment",{
+        method:"GET",
+        headers:{"Content-Type":"application/json"},
+        credentials: 'include',
+    }).then(response =>{
+        if(response.ok){
+            return response.json()
+        }
+    }).then(data=>{
+        set_origional_investment(data)   
+    }).catch(err=>console.log(err))
+
   },[])
   
   const options = {
@@ -71,6 +84,9 @@ const PortfolioPage = () => {
           <h1 className='portfolio_main_header'>
               Your Portfolio
           </h1>
+          <h2 className='portfolio_main_header'>
+            ${origional_investment.net_deposited}
+          </h2>
           <div className='portfolio_data_container'>
             <div className='portfolio_left'>
 
