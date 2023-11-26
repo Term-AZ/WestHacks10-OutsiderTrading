@@ -8,6 +8,8 @@ const saltRounds=10
 const fetch = require('node-fetch');
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
+const InfoBip = require('infobip-nodejs')
+var send_message = require('./communication/send_message.js')
 
 
 var generate_token = require('./jwt/generate_token.js')
@@ -254,4 +256,29 @@ app.get('/user/portfolio/following',(req,res)=>{
         return res.json(result)
     })
 })
+
+app.get('/user/follow_senator/:id',(req,res)=>{
+    const id = req.params.id
+
+    var check = "SELECT user_id, senator_id FROM user_followers WHERE senator_id = ? and user_id =? "
+    db.query(check, [id, 6] , (err,result)=>{
+        if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
+        if(result[0]==null){
+
+            var q = 'INSERT INTO user_followers(user_id, senator_id) VALUES(?,?)'
+            db.query(q,[6, id],(err)=>{
+                if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
+                var inner = "SELECT first_name, last_name, user_id, senator_id, phone_number, email, contact_type FROM user_followers INNER JOIN senators ON senators.id = user_followers.senator_id INNER JOIN users ON users.id = user_followers.user_id WHERE senator_id = ? and user_id =? "
+                db.query(inner,[id,6], (err,results)=>{
+                    send_message(`${results[0].first_name} ${results[0].last_name}`)  
+                    return res.status(200).send({"msg":"success"})
+                })
+
+            })
+        }else{
+            res.status(500).send({"msg":"You already follow this senator"})
+        }
+    })
+})
+
 
