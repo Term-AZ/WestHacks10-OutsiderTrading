@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-const footer = () => {
+const Footer = () => {
   return(
     <div className='footer_background'>
         © 2023 OutsiderTrading, All Rights Reserved
@@ -8,4 +8,4 @@ const footer = () => {
 )
 }
 
-export default footer
+export default Footer
