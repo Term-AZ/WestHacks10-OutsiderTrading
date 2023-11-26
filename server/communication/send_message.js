@@ -12,7 +12,7 @@ const send_message = (message) => {
                 to: '+12898349886',
               },
             ],
-            text: `You are now following ${message}`,
+            text: `${message}`,
           },
         ],
       };

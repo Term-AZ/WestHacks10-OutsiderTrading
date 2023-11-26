@@ -60,6 +60,15 @@ const Senatordatapage = (props) => {
 
     function handleFollowBtn(){
         set_following_button_text('Following');
+        fetch("http://localhost:8000/user/follow_senator/"+id+"",{
+        method:"GET",
+        headers:{"Content-Type":"application/json"},
+        credentials: 'include',
+    }).then(response =>{
+        if(response.ok){
+            return response.json()
+        }
+    })
     }
 
     return (
