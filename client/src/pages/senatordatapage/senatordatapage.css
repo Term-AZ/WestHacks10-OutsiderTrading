@@ -1,0 +1,72 @@
+.main{
+    width:100%;
+    margin: 0;
+    background-color: #66C98D;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    overflow: auto;
+    min-height: 94vh;
+}
+
+.trade-container{
+    /* width: 50%; */
+    /* align-items: stretch; */
+
+    max-width: 40%;
+    margin-bottom: 8%;
+}
+
+table.main_table{
+    width:100%;
+}
+
+h2.mainheader{
+    text-align: center;
+}
+
+#name{
+    margin: 0;
+    padding: 0;
+}
+#state, #party{
+    margin: 0;
+}
+
+.senator-info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-right: 10%;
+    margin-top: 3%;
+}
+
+#trade-data{
+    margin-top: 20%;
+    color: #000000;
+}
+
+.button-div{
+    margin-bottom: 20%;
+}
+
+.image-container{
+    margin-top: 2%;
+}
+
+.follow-button {
+    margin-top: 10%;
+    background-color: #000000; 
+    border: none;
+    color: #f9f9f9 !important;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+.follow-button:hover{
+    background-color: #332f2f;
+}

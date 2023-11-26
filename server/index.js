@@ -26,7 +26,7 @@ app.use(cors({
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
-// app.use("/", express.static('../client/public'))
+app.use("/", express.static('../client/public'))
 app.use("/",express.static('../client/build'))
 
 dotenv.config()
@@ -113,6 +113,15 @@ app.get('/get/senators',(req,res)=>{
         return res.json(result)
     })
 })
+
+app.get('/get/senator/:id',(req,res)=>{
+    const id = req.params.id
+    var q= "SELECT first_name,last_name,party,state FROM senators WHERE id =?"
+    db.query(q,[id], (err,result)=>{
+        if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
+        return res.json(result)
+    })
+})
 app.get('/get/senator_trades/:id',(req,res)=>{
     // try{
     //     const token = req.header(tokenHeaderKey)
@@ -123,21 +132,21 @@ app.get('/get/senator_trades/:id',(req,res)=>{
     //     return res.status(500).send({"msg":"Token expired"})
     // }
     const id = req.params.id
-    var q = "SELECT senator_id, company_id, date, type, amount, company_name FROM senator_trades WHERE senator_trades = ? INNER JOIN company ON company.id = senator_trades.stock_id"
+    var q = "SELECT company_id, trade_date, trade_type, amount FROM senator_trades WHERE senator_id = ?"
     db.query(q,[id],(err,result)=>{
         if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
         return res.json(result)
     })
 })
 
-app.get('/user/submit_payment/:amount',(req,res)=>{
-    const id = req.cookies["Cookie Token"]
-    const amount = req.params.amount
+app.get('/user/submit_payment',(req,res)=>{
 
+    console.log("in here")
     var q = "SELECT wallet_code FROM users WHERE id = ?"
-    db.query(q,[id], (err,result)=>{
+    db.query(q,[6], (err,result)=>{
         if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
         if(result[0]!=null){
+            console.log("in here")
             var wallet_code = result[0]["wallet_code"]
             var cypther = create_cypther()
             

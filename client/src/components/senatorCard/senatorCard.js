@@ -6,14 +6,17 @@ import pelosi from './pelosi.jpeg'
 
 const SenatorCard = (props) => {
     console.log(props.props[0])
-    const [useIsDemocrat, setIsDemocrat] = useState(props[3]=="Democrat"? true:false);
+    const [useIsDemocrat, setIsDemocrat] = useState(props.props[3]==="Democrat"? true : false);
     const [useIdType, setIdType] = useState('');
     console.log(props.props[0])
     useEffect(() => {
         setIdType(useIsDemocrat ? 'democrat' : 'republican');
       }, [useIsDemocrat]);
+    //   useEffect(()=>{
+    //     setIsDemocrat(props[3]=="")
+    //   })
   return (
-    <Link to={'/senator/'+props.props[0]}  className='link'>
+    <Link to={'/senator/'+props.props[0]+''}  className='link'>
         <div className={'Card'+' '+useIdType}>
             <div className='image-container'>
                 <img src={require(`../../images/${props.props[0]}.jpg`)} width="150" height="190"></img>
