@@ -9,7 +9,7 @@ const PortfolioPage = () => {
   const [investment, set_investment] = useState()
   const [following, set_following] = useState([])
   useEffect(()=>{
-    fetch("http://localhost:8000/user/portfolio/history",{
+    fetch("/user/portfolio/history",{
         method:"GET",
         headers:{"Content-Type":"application/json"},
         credentials: 'include',
@@ -28,7 +28,7 @@ const PortfolioPage = () => {
       
     }).catch(err=>console.log(err))
     
-    fetch("http://localhost:8000/user/portfolio/netinvestment",{
+    fetch("/user/portfolio/netinvestment",{
         method:"GET",
         headers:{"Content-Type":"application/json"},
         credentials: 'include',
@@ -40,7 +40,7 @@ const PortfolioPage = () => {
       set_investment(data)
   }).catch(err=>console.log(err))
     
-  fetch("http://localhost:8000/user/portfolio/following",{
+  fetch("/user/portfolio/following",{
     method:"GET",
     headers:{"Content-Type":"application/json"},
     credentials: 'include',

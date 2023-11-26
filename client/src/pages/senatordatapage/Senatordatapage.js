@@ -14,7 +14,7 @@ const Senatordatapage = (props) => {
     const [trade_data, set_trade_data] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:8000/get/senator/"+id+"",{
+        fetch("/get/senator/"+id+"",{
         method:"GET",
         headers:{"Content-Type":"application/json"},
         credentials: 'include',
@@ -27,7 +27,7 @@ const Senatordatapage = (props) => {
         }).catch(err=>console.log(err))
 
 
-        fetch("http://localhost:8000/get/senator_trades/"+id+"",{
+        fetch("/get/senator_trades/"+id+"",{
         method:"GET",
         headers:{"Content-Type":"application/json"},
         credentials: 'include',
@@ -46,7 +46,7 @@ const Senatordatapage = (props) => {
 
     function handleButton(){
         console.log("in here")
-        fetch("http://localhost:8000/user/submit_payment",{
+        fetch("/user/submit_payment",{
         method:"GET",
         headers:{"Content-Type":"application/json"},
         credentials: 'include',

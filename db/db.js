@@ -1,8 +1,8 @@
 var mysql = require('mysql2')
 
 db = mysql.createConnection({
-    host:'localhost',
-    user:'root',
+    host:'database-1.czefro9i2zbd.us-east-1.rds.amazonaws.com',
+    user:'admin',
     password: 'ywy957p3',
     database: 'hackwest_outsidertrading'
 })

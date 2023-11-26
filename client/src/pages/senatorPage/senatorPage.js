@@ -9,7 +9,7 @@ const SenatorPage = () => {
   const [senators, set_senators] = useState([])
 
   useEffect(()=>{
-    fetch("http://localhost:8000/get/senators",{
+    fetch("/get/senators",{
         method:"GET",
         headers:{"Content-Type":"application/json"},
         credentials: 'include',
