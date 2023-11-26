@@ -72,7 +72,15 @@ const Senatordatapage = (props) => {
     }
 
     function handleDemoBtn(){
-
+        fetch("http://localhost:8000/user/get_update/"+id+"",{
+        method:"GET",
+        headers:{"Content-Type":"application/json"},
+        credentials: 'include',
+    }).then(response =>{
+        if(response.ok){
+            return response.json()
+        }
+    })
         return
     }
 

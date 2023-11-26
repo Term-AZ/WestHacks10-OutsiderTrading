@@ -270,7 +270,7 @@ app.get('/user/follow_senator/:id',(req,res)=>{
                 if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
                 var inner = "SELECT first_name, last_name, user_id, senator_id, phone_number, email, contact_type FROM user_followers INNER JOIN senators ON senators.id = user_followers.senator_id INNER JOIN users ON users.id = user_followers.user_id WHERE senator_id = ? and user_id =? "
                 db.query(inner,[id,6], (err,results)=>{
-                    send_message(`${results[0].first_name} ${results[0].last_name}`)  
+                    send_message(`You are now following ${results[0].first_name} ${results[0].last_name}`)  
                     return res.status(200).send({"msg":"success"})
                 })
 
@@ -281,4 +281,20 @@ app.get('/user/follow_senator/:id',(req,res)=>{
     })
 })
 
+app.get('/user/get_update/:id',(req,res)=>{
+    const id = req.params.id
+    var q = "INSERT INTO senator_trades(senator_id, company_id, trade_date, trade_type, amount) VALUES(?,?,?,?,?)"
+    db.query(q,[id,'Dominion Energy IncD:US', '2023-11-27', 'buy', '20k'],(err)=> {
+        if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
+        
+        
+        var qq = "SELECT user_id, senator_trades.senator_id ,first_name, last_name, company_id, trade_date, trade_type, amount FROM user_followers INNER JOIN senators ON senators.id = user_followers.senator_id INNER JOIN senator_trades ON senator_trades.senator_id = user_followers.senator_id WHERE user_id = 6 and user_followers.senator_id =? and trade_date = '2023-11-27'"
+        db.query(qq, [id],(err,result)=>{
+            console.log(result)
+            if(err){console.log(err); return res.status(500).send({"msg":"Error has occured"})}
+            send_message(`${result[0].first_name} ${result[0].last_name} has just purchased $${result[0].amount} of ${result[0].company_id} stock at ${result[0].trade_date}`)  
+            return res.status(200).send({"msg":"success"})
+        })
+    })
+})
 
