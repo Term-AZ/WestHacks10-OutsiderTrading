@@ -12,6 +12,7 @@ const Senatordatapage = (props) => {
 
     const [senator, set_senator] = useState({})
     const [trade_data, set_trade_data] = useState([])
+    const [buttonText, set_following_button_text] = useState(['Follow senator'])
 
     useEffect(()=>{
         fetch("http://localhost:8000/get/senator/"+id+"",{
@@ -56,6 +57,11 @@ const Senatordatapage = (props) => {
         }
     })
     }
+
+    function handleFollowBtn(){
+        set_following_button_text('Following');
+    }
+
     return (
 
     <div class='main'>
@@ -67,9 +73,15 @@ const Senatordatapage = (props) => {
             <h3 id='state'>{senator[0]!=undefined?senator[0].state:""}</h3>
             <div className="button-div">
                 <button onClick={handleButton} className='follow-button'>
-                    Follow senator's trades
+                    Buy senator's stocks
                 </button>
                
+            </div>
+            <div className="button-div second-button">
+                <button onClick={handleFollowBtn} className='follow-button button2'>
+                    {buttonText}
+                </button>
+        
             </div>
         </div>
         
@@ -86,10 +98,10 @@ const Senatordatapage = (props) => {
             {trade_data.map((i)=>{
                 return(
                     <tr>
-                        <th>{i[0].company_id}</th>
-                        <th>{i[0].trade_date}</th>
-                        <th>{i[0].trade_type}</th>
-                        <th>{i[0].amount}</th>
+                        <td>{i[0].company_id}</td>
+                        <td>{i[0].trade_date}</td>
+                        <td>{i[0].trade_type}</td>
+                        <td>{i[0].amount}</td>
                     </tr>
                 )
             })}

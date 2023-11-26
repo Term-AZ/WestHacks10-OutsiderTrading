@@ -22,7 +22,7 @@ table.main_table{
 }
 
 h2.mainheader{
-    text-align: center;
+    text-align: left;
 }
 
 #name{
@@ -42,12 +42,13 @@ h2.mainheader{
 }
 
 #trade-data{
-    margin-top: 20%;
+    margin-top: 6%;
     color: #000000;
+    font-size:1.5em;
 }
 
 .button-div{
-    margin-bottom: 20%;
+    margin-bottom: 7%;
 }
 
 .image-container{
@@ -55,7 +56,7 @@ h2.mainheader{
 }
 
 .follow-button {
-    margin-top: 10%;
+    margin-top: 11%;
     background-color: #000000; 
     border: none;
     color: #f9f9f9 !important;
@@ -69,4 +70,9 @@ h2.mainheader{
 
 .follow-button:hover{
     background-color: #332f2f;
+    cursor:pointer;
+}
+
+.button2{
+    margin-top: 0;
 }
