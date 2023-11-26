@@ -15,6 +15,7 @@
 
 Discover a platform that brings transparency to senators' trading activities. Outsider Trading allows you to analyze senators' financial history and automate your trades based on their past transactions.
 
+![](https://github.com/Term-AZ/WestHacks10-OutsiderTrading/blob/main/demo.gif)
 
 ## 📋 Table of Contents
 1. 📈 [Features](#features)
