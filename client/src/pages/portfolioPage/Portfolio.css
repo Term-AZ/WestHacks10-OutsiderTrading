@@ -1,12 +1,6 @@
-h1{
-    padding-left: 20px;;
-}
-ul{
-}
 
-
-h1.portfolio_main_header{
-    padding-left: 0px;
+.portfolio_main_header{
+    padding-left: 20px;
 }
 .portfolio_background{
     height:100%;
@@ -49,3 +43,15 @@ h1.portfolio_main_header{
     padding-left: 25px;
 }
 
+.following{
+    padding: 0;
+}
+
+.following li {
+    list-style-type: none;
+    background: #ffccf7;
+    color: darkblue;
+    margin: 3px;
+    font-size: 1.4em;
+    padding-left: 3px;
+  }

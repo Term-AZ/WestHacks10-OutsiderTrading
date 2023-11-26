@@ -71,6 +71,12 @@ const Senatordatapage = (props) => {
     })
     }
 
+    function handleDemoBtn(){
+
+        return
+    }
+
+
     return (
 
     <div class='main'>
@@ -90,8 +96,13 @@ const Senatordatapage = (props) => {
                 <button onClick={handleFollowBtn} className='follow-button button2'>
                     {buttonText}
                 </button>
-        
             </div>
+            <div className="button-div demo-button">
+                <button onClick={handleDemoBtn} className='follow-button button2 demoBtn'>
+                    Sim
+                </button>
+            </div>
+
         </div>
         
        

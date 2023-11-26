@@ -67,14 +67,8 @@ const PortfolioPage = () => {
     <div className='portfolio_background'>
       <div className='main_portfolio_container'>
 
-        <div className='portfolio_header_container'>
-          <h1 >
-            OutsiderTrading
-          </h1>
-        </div>
-
         <div>
-          <h1 >
+          <h1 className='portfolio_main_header'>
               Your Portfolio
           </h1>
           <div className='portfolio_data_container'>
@@ -91,10 +85,10 @@ const PortfolioPage = () => {
               </div>
             </div>
             <div className='portfolio_right'>
-              <h2>
+              <h1>
                 Following:
-              </h2>
-              <ul>
+              </h1>
+              <ul className='following'>
                 {following.map((i)=>{
                   return(
                       <li>

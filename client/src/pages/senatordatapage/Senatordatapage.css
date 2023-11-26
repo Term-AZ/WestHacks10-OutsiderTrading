@@ -76,3 +76,22 @@ h2.mainheader{
 .button2{
     margin-top: 0;
 }
+
+.demoBtn{
+    background: transparent;
+    /* background-color: rgb(91, 62, 207); */
+    border: none;
+}
+.demoBtn:hover{
+    background-color: rgb(140, 222, 203);
+}
+
+th {
+    text-align: left;
+    background-color: #459e69;
+    color: white;
+  }
+
+td, th {
+    padding: 8px;
+}
